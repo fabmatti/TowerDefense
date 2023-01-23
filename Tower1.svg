@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="Tower1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="5.8360978"
+     inkscape:cx="-9.252758"
+     inkscape:cy="48.491306"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="116"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid38"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect584"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,3.7735849 C 0,1.690566 1.690566,0 3.7735849,0 c 2.0830189,0 3.7735849,1.690566 3.7735849,3.7735849 0,2.0830189 -1.690566,3.7735849 -3.7735849,3.7735849 C 1.690566,7.5471698 0,5.8566038 0,3.7735849 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#008080;stroke:#60abe5;stroke-width:0.518006;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:0.399356;stroke-opacity:1"
+       id="path221"
+       cx="10.006686"
+       cy="10.006686"
+       r="7.7516274" />
+    <rect
+       style="fill:#60abe5;stroke:#60abe5;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:0.399356;stroke-opacity:1;fill-opacity:1"
+       id="rect1161"
+       width="1.95336"
+       height="9.0814104"
+       x="9.0128717"
+       y="0.9252758"
+       rx="0.19621682" />
+  </g>
+</svg>
