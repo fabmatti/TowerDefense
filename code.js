@@ -6,6 +6,7 @@ var maxEnemies = 5;
 var enemyCounter = 0;
 var frameRate = 25; //Bilder pro Sekunde
 var nextEnemyRate = 30; //nach wie vielen Durchläufen kommt der nächste Feind
+var fireRate = 8; //nach wie vielen Durchläufen kommt der nächste Schuss
 
 canvas.width = window.innerWidth-30;
 canvas.height = window.innerHeight-30;
@@ -55,6 +56,22 @@ function startAnimation()
         tower.drawElement(enemies[0].x, enemies[0].y);
     }
     
+    //Alle 5 Wiederholungen wird abgefeuert
+    if(loopCounter % fireRate == 0)
+    {
+        //Nur, wenn es einen Turm und auch Gegner gibt
+        if(tower != null && enemies.length > 0)
+        {
+            //Dem Konstruktor von Bullet werden die Abschuss- und Ziel-Koordinaten mitgegeben
+            var bullet = new Bullet(tower.x + tower.image.width / 2, //die Mitte vom Turm
+                                    tower.y + tower.image.height / 2, 
+                                    enemies[0].x + enemies[0].image.width / 2, //die Mitte vom Gegner-Bild
+                                    enemies[0].y + enemies[0].image.height / 2);
+            bullet.drawElement();
+            enemies[0].getHit(bullet.power);
+        }
+    }
+
     //Alle 50 Wiederholungen wird ein neuer Gegner erzeugt und losgeschickt
     if(loopCounter % 50 == 0)
     {
@@ -77,7 +94,7 @@ function startAnimation()
 
         //Wenn der aktuelle Gegner unten (also 50px vom unteren Rand entfernt) angekommen ist,
         //wird er aus der Liste "enemies[]" entfernt
-        if(item.y > canvas.height - 50)
+        if(item.y > canvas.height - 50 || item.armorPower == 0)
         {            
             enemies.splice(index,1);
         }
