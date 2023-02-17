@@ -21,7 +21,7 @@ var y = 50;
 var delayTime;
 
 var enemies = [];
-var tower = null;
+var towers = [];
 
 var loopCounter = 0;
 var intervalId = null;
@@ -46,29 +46,52 @@ function startAnimation()
 
     if(loopCounter == 0) //Am Anfang wird EIN Turm fest platziert
     {
-        tower = new Tower(400, canvas.height/2, imageSrcTower);
+        towers.push(new Tower(400, canvas.height/2, imageSrcTower));
+    }
+
+    if(loopCounter == 100) //Am Anfang wird EIN Turm fest platziert
+    {
+        towers.push(new Tower(1200, canvas.height/2, imageSrcTower));
     }
 
     //Wenn es Gegner gibt, dann wird der Turm gezeichnet und die Koordinaten des ersten Gegners zum Zielen übermittelt
     //Der Turm richtet sich dann mit seiner Kanone dahin aus
     if(enemies.length > 0)
-    {
-        tower.drawElement(enemies[0].x, enemies[0].y);
-    }
+    {       
+        towers.forEach(function callback(item, index)
+        {
+            var tower = item;
+    
+             tower.drawElement(enemies[0].x, enemies[0].y);
+        });
+    }    
     
     //Alle 5 Wiederholungen wird abgefeuert
     if(loopCounter % fireRate == 0)
     {
         //Nur, wenn es einen Turm und auch Gegner gibt
-        if(tower != null && enemies.length > 0)
+        if(towers.length > 0 && enemies.length > 0)
         {
             //Dem Konstruktor von Bullet werden die Abschuss- und Ziel-Koordinaten mitgegeben
-            var bullet = new Bullet(tower.x + tower.image.width / 2, //die Mitte vom Turm
-                                    tower.y + tower.image.height / 2, 
-                                    enemies[0].x + enemies[0].image.width / 2, //die Mitte vom Gegner-Bild
-                                    enemies[0].y + enemies[0].image.height / 2);
-            bullet.drawElement();
-            enemies[0].getHit(bullet.power);
+            // var bullet = new Bullet(tower.x + tower.image.width / 2, //die Mitte vom Turm
+            //                         tower.y + tower.image.height / 2, 
+            //                         enemies[0].x + enemies[0].image.width / 2, //die Mitte vom Gegner-Bild
+            //                         enemies[0].y + enemies[0].image.height / 2);
+            // bullet.drawElement();
+            // enemies[0].getHit(bullet.power);
+
+
+            towers.forEach(function callback(item, index)
+            {
+                var tower = item;
+        
+                var bullet = new Bullet(tower.x + tower.image.width / 2, //die Mitte vom Turm
+                                tower.y + tower.image.height / 2, 
+                                enemies[0].x + enemies[0].image.width / 2, //die Mitte vom Gegner-Bild
+                                enemies[0].y + enemies[0].image.height / 2);
+                bullet.drawElement();
+                enemies[0].getHit(bullet.power);
+            });
         }
     }
 
