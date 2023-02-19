@@ -6,6 +6,9 @@ class Tower{
         
         this.image = new Image();
         this.image.src = imageSource;
+
+        this.x = this.x - this.image.width;
+        this.y = this.y - this.image.height;
     }
 
     type() { return("Tower");}
